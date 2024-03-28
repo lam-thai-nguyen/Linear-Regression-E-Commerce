@@ -1,3 +1,4 @@
+import math
 import numpy as np
 import matplotlib.pyplot as plt
 from utils import plot_cost_iter
@@ -61,7 +62,7 @@ def gradient_descent(X: np.array, y: np.array, w_init: list[float], b_init: floa
         cost = _compute_cost(X, y, w, b)
         cost_record.append(cost)
         
-        if i % (num_iters // 10) == 0:
+        if i % math.ceil(num_iters / 10) == 0:
             print(f"{i}th cost: {cost}")
             
     if plot_cost_per_iter:
