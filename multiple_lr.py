@@ -69,3 +69,14 @@ def gradient_descent(X: np.array, y: np.array, w_init: list[float], b_init: floa
         plot_cost_iter(cost_record)
             
     return w, b
+
+
+def predict(X_test, w, b):
+    """
+    Argument: X_test (m, n)
+    Returns: y_pred (m,)
+    """
+    y_pred = np.dot(X_test, w) + b
+    
+    return y_pred
+    
